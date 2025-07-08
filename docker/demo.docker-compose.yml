@@ -1,0 +1,17 @@
+
+services:
+  setup:
+    container_name: reach_study_setup
+    extends:    
+      file: docker-compose.yml
+      service: reach_ros
+    command: /bin/bash -c "source /opt/reach_ros/setup.bash 
+                          && ros2 launch reach_ros setup.launch.py"
+
+  reach_study:
+    container_name: reach_study
+    extends:
+      file: docker-compose.yml
+      service: reach_ros
+    command: /bin/bash -c "source /opt/reach_ros/setup.bash 
+                          && ros2 launch reach_ros start.launch.py"
