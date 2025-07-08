@@ -1,4 +1,3 @@
-ARG TAG
 FROM moveit/moveit2:jazzy-release
 
 SHELL ["/bin/bash", "-c"]

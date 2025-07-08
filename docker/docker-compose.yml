@@ -1,11 +1,9 @@
-version: '3'
+version: '1'
 services:
   reach_ros:
     build:
       context: ..
       dockerfile: docker/Dockerfile
-      # args:
-      #   - TAG=humble-0.29
     environment:
       DISPLAY: $DISPLAY
       XAUTHORITY: $XAUTHORITY
