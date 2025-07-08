@@ -1,6 +1,6 @@
 # Uncomment for use with GPU
 # services:
-#   noether:
+#   reach_ros:
 #     environment:
 #       NVIDIA_DRIVER_CAPABILITIES: all
 #     deploy:
