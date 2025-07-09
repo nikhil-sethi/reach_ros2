@@ -4,6 +4,8 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile
+      args:
+        - DISTRO=jazzy
     environment:
       DISPLAY: $DISPLAY
       XAUTHORITY: $XAUTHORITY
