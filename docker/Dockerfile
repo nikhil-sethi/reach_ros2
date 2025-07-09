@@ -12,7 +12,7 @@ USER root
 ARG WORKSPACE_DIR=/tmpfs/reach_ros
 ARG INSTALL_DIR=/opt/reach_ros
 RUN apt update -y -qq \
-    && rosdep update
+    && rosdep update --include-eol-distros
   
 # Build the repository
 # Bind mount the source directory so as not to unnecessarily copy source code into the docker image
