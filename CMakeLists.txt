@@ -51,7 +51,8 @@ add_library(
   # Display
   src/display/ros_display.cpp
   # Target pose generator
-  src/target_pose_generator/transformed_point_cloud_target_pose_generator.cpp)
+  src/target_pose_generator/transformed_point_cloud_target_pose_generator.cpp
+  src/target_pose_generator/transformed_yaml_target_pose_generator.cpp)
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
                                                   $<INSTALL_INTERFACE:include>)
 target_link_libraries(${PROJECT_NAME} PUBLIC reach::reach)
@@ -89,7 +90,7 @@ install(TARGETS ${PROJECT_NAME}_node DESTINATION lib/${PROJECT_NAME})
 install(DIRECTORY include/${PROJECT_NAME} DESTINATION include)
 
 # Install the support directories
-install(DIRECTORY launch demo DESTINATION share/${PROJECT_NAME})
+install(DIRECTORY launch demo runs DESTINATION share/${PROJECT_NAME})
 
 ament_export_targets(${PROJECT_NAME}-targets HAS_LIBRARY_TARGET)
 ament_export_dependencies(${ROS2_DEPS})
